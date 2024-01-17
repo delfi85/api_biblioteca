@@ -25,6 +25,18 @@ app.use("/api/libros", autenticacion,  librosRouter);
 
 app.use(errorHandler);
 
+// Ruta del nuevo endpoint
+app.get('/api/nuevo-endpoint', (req, res) => {
+  // Lógica del endpoint
+  const respuesta = {
+    mensaje: '¡Hola! Este es el nuevo endpoint.',
+    fecha: new Date(),
+  };
+
+  // Enviar la respuesta como JSON
+  res.json(respuesta);
+});
+
 app.listen(3000, () => {
   console.log("Servidor iniciado en el puerto 3000");
 });
